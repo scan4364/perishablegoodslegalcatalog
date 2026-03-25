@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requirements Catalog: Perishable Goods Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        .volere-card {
+            border: 2px solid #2c3e50;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .volere-header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .volere-body {
+            padding: 0;
+            display: table;
+            width: 100%;
+        }
+        .volere-row {
+            display: table-row;
+        }
+        .volere-label {
+            display: table-cell;
+            font-weight: bold;
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+            border-right: 1px solid #eee;
+            width: 25%;
+            background-color: #f4f7f6;
+        }
+        .volere-content {
+            display: table-cell;
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .highlight {
+            font-weight: bold;
+        }
+        /* --- Styles for the iNFR model --- */
+        .infr-card {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+            margin-bottom: 30px;
+            background-color: #fff;
+            font-family: 'Times New Roman', Times, serif; 
+            font-size: 14px;
+        }
+        .infr-card td, .infr-card th {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            vertical-align: top;
+            line-height: 1.4;
+        }
+        .infr-card strong {
+            font-weight: bold;
+        }
+        .infr-val {
+            color: #0000FF; 
+        }
+        .infr-no-border-bottom {
+            border-bottom: none !important;
+        }
+        .infr-no-border-top {
+            border-top: none !important;
+        }
+        .infr-options {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .infr-options li {
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="text-align: right; margin-bottom: 20px;">
+        <a href="index.html" style="text-decoration: none; padding: 5px 10px; background: #ccc; color: black; border-radius: 3px; font-weight: bold;">🇧🇷 PT</a>
+        <a href="index-en.html" style="text-decoration: none; padding: 5px 10px; background: #2c3e50; color: white; border-radius: 3px; font-weight: bold;">🇺🇸 EN</a>
+    </div>
+
+    <h1>Requirements Catalog for Perishable Goods Inventory and Storage Management Systems</h1>
+
+    <div class="section" id="introduction">
+        <h2>Introduction</h2>
+        <p>This site serves as an official repository to present a structured requirements catalog aimed at information systems for the inventory and storage management of perishable goods in the Brazilian logistics sector. The artifact consolidates functional, non-functional, and legal requirements extracted from regulatory evidence, designed to accelerate the development of software solutions and ensure technical compliance in this domain.</p>
+        
+        <p>Software Engineering and the creation of robust systems are fundamental to the sector. In the development of logistics management systems, the precise definition of requirements is the key element ensuring the software meets operational and regulatory needs (ROBERTSON; ROBERTSON, 2012). There is a growing demand to create information systems capable of integrating operational and environmental data to support decision-making in the management of sensitive inventories, as the digitalization of storage processes is a key factor in reducing waste and improving efficiency (BALLOU, 2006; GHIANI et al., 2022).</p>
+        
+        <p>Logistical complexity is intensified by the strict prevailing regulatory framework. The effectiveness of storage and transportation inherently depends on compliance with sanitary legislation imposed by the National Health Surveillance Agency (ANVISA) and the Ministry of Agriculture, Livestock and Food Supply (MAPA). Ensuring that software complies with these regulations—such as temperature verification, traceability, and equipment calibration—not only guarantees the health and safety of the final consumer but also acts as an essential mitigator against commercial losses and legal liability in the supply chain.</p>
+    </div>
+
+    <div class="section" id="catalog">
+        <h2>The Catalog</h2>
+        <p>The development of the catalog was based on qualitative applied research, guided by the engineering research method (WIERINGA, 2014; FELDERER & TRAVASSOS, 2020). The process was structured in the stages of Elicitation, Development, and Evaluation, combining a systematic literature review and a deep documentary analysis of ANVISA and MAPA regulations to identify, extract, and formalize the requirements.</p>
+        
+        <p>The purpose of this catalog is to act as a concrete and reusable knowledge artifact. It can be used both as a technical foundation and guide for developers to design and accelerate the development of new software in the logistics area—aligning operational needs with legal compliance—and as an analytical tool for auditing and evaluating storage systems already operating in the market.</p>
+        
+        <p>To ensure clarity and the adoption of good Requirements Engineering practices, the specification was divided. Functional Requirements, which dictate the technical behaviors and actions of the system, were structured and modeled using the use case methodology based on the Volere template. Non-Functional Requirements, responsible for designating quality goals (such as usability and security) and legal constraints of the application, are mapped using the iNFR framework, ensuring standardization and traceability.</p>
+    </div>
+
+    <div class="section" id="functional-requirements">
+        <h2>Functional Requirements</h2>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-EST-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-EST-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Batch and Expiration Date Control</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must mandatorily perform individual tracking of each item or load unit present in the inventory via the batch number. For each entry record, the software must require and store the manufacturing date and the expiration date corresponding to the batch, preventing the completion of the process if these fields are not filled.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Ensure traceability and monitoring of product movement along the supply chain, as required by Joint Normative Instruction (INC) ANVISA/MAPA No. 02/2018 <strong>[1]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must block the dispatch of any item that does not have a linked batch or whose expiration date is not registered in the database.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-CAD-01 (Product Base Registration).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Related to RF-EST-02 for executing the FEFO policy (expiration).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">Created on 2026-03-18 by Samuel Celso for compliance with the socio-biodiversity framework.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-EST-02</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-EST-02</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Support for Multiple Movement Policies</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must allow the configuration of inventory output algorithms, mandatorily supporting the following policies: FIFO (First In, First Out); FEFO (First Expire, First Out), which automatically recommends batches with the closest expiration date; and Weighted Average Cost for accounting purposes.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Reference)</div>
+                    <div class="volere-content">Optimize the management of perishable products to reduce waste and financial losses due to expiration, based on principles of logistics efficiency.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">When initiating a dispatch order, the system must automatically prioritize at the top of the list the items whose expiration dates expire first (FEFO).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-EST-01 (requires registered expiration data).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Directly impacts the accuracy of management indicators described in RF-REL-01.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">Included in the catalog on 2026-03-18 to support technologically advanced operations management.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-EST-05</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-EST-05</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Storage Conditions Monitoring (IoT)</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must integrate with temperature and humidity sensors (IoT) installed in the warehouse. The software must continuously receive and record this data, displaying values in real-time and issuing automatic audio or visual alerts if levels deviate from the predefined safety range for the product.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Ensure compliance with conservation specifications and documented process control, according to ANVISA RDC No. 18/2013, Art. 139 <strong>[2]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must generate an audit log proving the thermal stability of the environment throughout the batch's entire storage period.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RNF-INT (Interoperability with hardware/sensor APIs).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Provides critical data for legal requirement RL-002 (Maintenance of Equipment and Cold Rooms).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">Proposed on 2026-03-18 in response to the need for real-time monitoring of sensitive inventories.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RL-002</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RL-002</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Equipment Maintenance Record</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Legal (LR)</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must provide a specific module to record all maintenance and calibration activities for critical equipment (cold rooms, thermometers, scales). The record must contain the date, responsible technician, description of the service performed, and the scheduling of the next inspection.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Perform scheduled and periodic maintenance of equipment and calibration of measuring instruments, keeping records according to ANVISA RDC No. 216/2004, Art. 4.1.16 <strong>[3]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must automatically send a notification to managers 15 days before the expiration of any mandatory calibration.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-CAD-01 (Asset/Equipment Registration).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Complements RF-EST-05, ensuring the sensors monitoring the inventory are properly calibrated.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">Added to mitigate sanitary non-compliance risks during official audits.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-RAS-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-RAS-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Origin Registration with Geolocation</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must allow detailed registration of the origin of each raw material batch. This includes the identification of the producer or extractivist and the mandatory capture of geographic coordinates (latitude and longitude) of the collection point or rural property where the product originated.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Meet the mandatory requirement to identify the origin and producers in the supply chain, as established by Joint Normative Instruction (INC) ANVISA/MAPA No. 02/2018 <strong>[1]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">Batch registration must be blocked if geolocation data or supplier identification is not provided.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-FOR-01 (Centralized Supplier and Producer Registration).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Feeds the necessary database for public consultation described in RF-RAS-04.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-RAS-02</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-RAS-02</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Supply Chain Tracking (End-to-End)</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must chronologically record all movements and transformations of a batch along the supply chain. Events such as collection, physical movements between locations, processing stages, storage periods, and final distribution must be recorded.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Enable complete tracking of a product's movement along the supply chain, recording origin and movements, according to INC ANVISA/MAPA No. 02/2018 <strong>[1]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">It must be possible to generate a complete history (log) of every hand the batch has passed through, from extraction to dispatch.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-EST-01 (Batch and Expiration Date Control).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Crucial for the functioning of RF-REL-02 (Compliance Reports for Audits).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-RAS-03</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-RAS-03</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Integration with Identification Technologies</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must be capable of generating and reading unique identifiers for each batch through automatic capture technologies, specifically Barcodes, QR Codes, or RFID tags.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Reference)</div>
+                    <div class="volere-content">Automate data capture at control points, reducing manual errors and increasing operational efficiency in movement recording.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must print legible labels and process readings via scanners or mobile devices in under 3 seconds.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-RAS-02 (Requires chain history data to link to the ID).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Technically enables the consumer consultation requirement (RF-RAS-04).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-RAS-04</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-RAS-04</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Public Traceability Consultation</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must provide an interface aimed at the final consumer (e.g., a web portal accessible via QR Code on the packaging) presenting a summarized traceability history of the batch.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Reference)</div>
+                    <div class="volere-content">Ensure transparency in the socio-biodiversity chain and consumer safety by allowing verification of product origin.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The interface must display at least: producer/origin name, harvest date, and sanitary compliance confirmation.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-RAS-03 (Physical code generation) and RF-RAS-01 (Origin data).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Depends on the integrity of data recorded in module RF-RAS-02.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-FOR-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-FOR-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Centralized Partner and Producer Registration</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must maintain a centralized and structured database to record all supply chain partners. This registry must include detailed information on rural producers, extractivists, cooperatives, and outsourced storage units.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Fundamental for process coordination and serving as the basis for traceability required by INC ANVISA/MAPA No. 02/2018 <strong>[1]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must allow filtering partners by category (e.g., producer, cooperative) and ensure essential contact and location data are validated during registration.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">None (Base supplier module).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">This requirement is the mandatory foundation for the geolocated origin registration in RF-RAS-01.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-FOR-02</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-FOR-02</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Partner Documentation and Certification Management</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must provide functionalities for uploading, digital storage, and lifecycle management of partner certifications and licenses. It must support specific documents such as Organic Certificates, Sanitary Licenses, and MAPA's Storage Unit Certificate, issuing automatic alerts to managers prior to their expiration.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Meet mandatory certification requirements for storage units and compliance with sanitary standards, according to MAPA Law No. 9.973/2000 <strong>[4]</strong> and ANVISA RDC 216/04 good practices guidelines <strong>[3]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must trigger automatic notifications on the manager's dashboard and via email with a minimum configurable advance (e.g., 30 days) before a certification expires.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-FOR-01 (Partner registration to which the document will be linked).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Provides the necessary evidence for Compliance and Audit Reports described in RF-REL-02.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Important.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-REL-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-REL-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Control Panels (Dashboards)</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must feature interactive visual panels (dashboards) consolidating Key Performance Indicators (KPIs) of logistics operations. Dashboards must display metrics on inventory turnover, perishable goods loss rate, inventory accuracy, and service level provided.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">The digitalization of storage processes is a key factor to reduce waste and improve service levels in perishable supply chains. Logistics efficiency directly depends on the ability to control material flows sustainably.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">Dashboards must allow data filtering by period, storage unit, and product category (e.g., socio-biodiversity).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-EST (Inventory Management) and RF-RAS (Traceability) for movement data supply.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Uses data collected via IoT (RF-EST-05) to generate alerts for losses due to thermal deviations.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-REL-02</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-REL-02</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Compliance Reports</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must be capable of automatically generating reports consolidating all records required by ANVISA and MAPA audits. The document must group facility sanitation logs, equipment maintenance and calibration schedules, and the complete traceability history of each batch.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">The system must support regulatory compliance by automating controls to prevent failures compromising quality and safety. Meets mandatory cleaning and maintenance record requirements outlined in ANVISA RDC 216/04 <strong>[3]</strong> and Portaria 326/97 <strong>[5]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The generated report must be in a non-editable format (PDF) and contain the digital signature or unambiguous identification of the person responsible for the record.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-RAS-02 (Supply Chain Tracking), RL-002 (Equipment Maintenance), and sanitation records (as per Table 1 of the catalog).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Ensures the auditability of input data provided by Supplier (RF-FOR) and Storage modules.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-CAD-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-CAD-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Base Registration of Perishable Goods</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must allow centralized registration of all products, categorizing them by type (e.g., plant origin, animal origin, herbal). It must include fields for technical conservation specifications, such as ideal temperature and humidity ranges for storage.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Necessary for the correct application of segregation and storage rules by type or group, aiming to prevent cross-contamination, according to ANVISA Portaria 326/97 <strong>[5]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The registration must allow the definition of alert parameters for sensitive products, automatically linking them to warehouse allocation rules.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">None (Master data module).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Base requirement for RF-EST-01 (Batch Control) and RF-RAS-01 (Origin Registration).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-CAD-02</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-CAD-02</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Critical Assets and Equipment Registration</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must maintain a digital inventory of all equipment used in product conservation and measurement (cold rooms, freezers, thermometers, and scales). Each asset must have a lifespan history and a field to link technical manuals.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Essential to support asset management and ensure all measuring and conservation instruments are under control, meeting ANVISA RDC 216/04, Art. 4.1.16 <strong>[3]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">Each equipment must have an operation status (e.g., Active, In Maintenance, Expired Calibration) visible on the dashboard.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">None.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Mandatory for the operation of RL-002 (Maintenance Record) and IoT integration of RF-EST-05.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-HIG-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-HIG-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Digital Hygiene and Sanitation Checklist</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must provide checklist functionalities to record cleaning and disinfection operations for facilities and equipment. It must allow recording the date, time, responsible person's name, and identification of chemical products used in sanitation.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Mandatory recording of cleaning and disinfection operations when not routine, ensuring proper hygienic-sanitary conditions according to ANVISA RDC 216/04, Art. 4.2.3 <strong>[3]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must generate non-editable audit logs for each completed checklist, serving as proof of compliance during inspections.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-CAD-02 (To link cleaning to specific equipment).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Feeds RF-REL-02 (Compliance Reports).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Important.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-WMS-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-WMS-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Product Allocation and Segregation Rules</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The Warehouse Management System (WMS) must support and automatically apply allocation rules preventing the joint storage of incompatible products (such as cleaning materials and food) or those requiring specific isolation.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Ensure food is stored in a way that prevents contamination, according to ANVISA Portaria 326/97 <strong>[5]</strong>, and ensure chemical products are kept isolated from production areas, following MAPA IN No. 05/2017, § 5 <strong>[6]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must block any attempt to move a chemical product into a storage zone defined as "Food" or "Perishables".</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-CAD-01 (Base Product Registration) and RF-CAD-02 (Asset Registration).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Related to RF-EST-03 (Multiple Warehouse Management) to define physical constraints for each location.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-CAL-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-CAL-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Measurement Instruments Calibration Management</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must provide a module for scheduling and recording calibrations of measuring instruments (thermometers, hygrometers, and scales). It must allow storage of calibration certificates and generate expiration alerts.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Mandatory to perform scheduled maintenance and calibration of measuring instruments, keeping records according to ANVISA RDC 216/04, Art. 4.1.16 <strong>[3]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must prevent temperature data collected by a sensor with expired calibration from being validated as "Compliant" in the audit report.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-CAD-02 (Asset Registration).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Interdependent with RF-EST-05 (IoT Monitoring), as environmental measurement validity depends on sensor calibration.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-QUA-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-QUA-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Quality Control and Batch Analysis</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must have a quality control module allowing the recording of laboratory analyses and specification tests for each inventory batch. The system must permit blocking or releasing the batch based on these test results.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Perform documented in-process control to ensure product specifications are met, according to ANVISA RDC 18/2013, Art. 139 <strong>[2]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">A batch marked as "Under Analysis" or "Rejected" must not be available for dispatch in the movement module (FEFO/FIFO).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-EST-01 (Batch Control).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Provides fundamental data for RF-REL-02 (Compliance Reports).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-ADM-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-ADM-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Storage Unit Certification Management</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must manage mandatory certification of physical storage units, especially those providing services to third parties. It must include validity control of the Storage Unit Certificate and digital document upload.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Meet mandatory certification requirements for storage units rendering remunerated services to third parties, according to MAPA Law No. 9.973/2000 <strong>[4]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">The system must notify about unit certificate expiration 60 days in advance to allow the renewal process with MAPA.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-EST-03 (Multiple Warehouse Management).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">Related to RF-FOR-02 for outsourced partner document management.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Important.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-19</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section" id="non-functional-requirements">
+        <h2>Non-Functional Requirements (iNFR Model)</h2>
+
+        <table class="infr-card">
+            <tbody>
+                <tr><td colspan="4"><strong>ID:</strong> <span class="infr-val">RNF-USA-01</span></td></tr>
+                <tr><td colspan="4"><strong>Priority level:</strong> <span class="infr-val">1 (Essential)</span></td></tr>
+                <tr><td colspan="4"><strong>System (component):</strong> <span class="infr-val">Inventory and Storage Management System</span></td></tr>
+                <tr>
+                    <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
+                    <td width="26%">X Stakeholder:<br><span class="infr-val">Extractivists and Analysts</span></td>
+                    <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
+                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
+                    <td colspan="2" class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>X Desire, user-oriented</li>
+                            <li>O Desire, technology-oriented</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>X Usability</li>
+                            <li>O Efficiency</li>
+                            <li>O Maintainability</li>
+                            <li>O Portability</li>
+                            <li>O Reliability</li>
+                            <li>O Security</li>
+                            <li>O Other: ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>O Constraint</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>O Cultural</li>
+                            <li>O Environmental</li>
+                            <li>O Implementation & design</li>
+                            <li>O Interface</li>
+                            <li>O Legal</li>
+                            <li>O Other: ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Description</strong><br>
+                        <em>The system shall ...</em><br>
+                        <span class="infr-val">have an intuitive and accessible interface for different levels of digital literacy and be responsive for mobile devices.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Fit criteria</strong><br>
+                        <ol class="infr-val" style="margin-top: 5px; padding-left: 20px;">
+                            <li>The system must maintain 100% of operational functionalities on 5" to 12" screens (Smartphones and Tablets).</li>
+                            <li>Extractivist users must complete the collection registration in a maximum of 3 minutes without the help of external manuals.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Validation</strong><br><em>(choose one)</em></td>
+                    <td>O Run-time online</td>
+                    <td>X Run-time offline</td>
+                    <td>O Compile-time</td>
+                </tr>
+                <tr>
+                    <td><strong>Testing</strong><br><em>(choose one)</em></td>
+                    <td>O Continuous</td>
+                    <td>O Periodical</td>
+                    <td>O Single test</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">n/a</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">RF-RAS-01, RF-EST-01</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="infr-card">
+            <tbody>
+                <tr><td colspan="4"><strong>ID:</strong> <span class="infr-val">RNF-DIS-01</span></td></tr>
+                <tr><td colspan="4"><strong>Priority level:</strong> <span class="infr-val">1 (Essential)</span></td></tr>
+                <tr><td colspan="4"><strong>System (component):</strong> <span class="infr-val">Inventory and Storage Management System</span></td></tr>
+                <tr>
+                    <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
+                    <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
+                    <td width="26%">X Own organization:<br><span class="infr-val">Rural area stakeholders</span></td>
+                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
+                    <td colspan="2" class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>O Desire, user-oriented</li>
+                            <li>X Desire, technology-oriented</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>O Usability</li>
+                            <li>O Efficiency</li>
+                            <li>O Maintainability</li>
+                            <li>O Portability</li>
+                            <li>X Reliability</li>
+                            <li>O Security</li>
+                            <li>O Other: ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>O Constraint</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>O Cultural</li>
+                            <li>O Environmental</li>
+                            <li>O Implementation & design</li>
+                            <li>O Interface</li>
+                            <li>O Legal</li>
+                            <li>O Other: ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Description</strong><br>
+                        <em>The system shall ...</em><br>
+                        <span class="infr-val">ensure high availability and include an offline operation mode for rural areas with automatic synchronization.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Fit criteria</strong><br>
+                        <ol class="infr-val" style="margin-top: 5px; padding-left: 20px;">
+                            <li>Uptime must be at least 99.9%.</li>
+                            <li>Automatic synchronization must start within 10 seconds after connectivity is restored.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Validation</strong><br><em>(choose one)</em></td>
+                    <td>X Run-time online</td>
+                    <td>O Run-time offline</td>
+                    <td>O Compile-time</td>
+                </tr>
+                <tr>
+                    <td><strong>Testing</strong><br><em>(choose one)</em></td>
+                    <td>X Continuous</td>
+                    <td>O Periodical</td>
+                    <td>O Single test</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">n/a</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">All field registration modules (RF-EST, RF-RAS)</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="infr-card">
+            <tbody>
+                <tr><td colspan="4"><strong>ID:</strong> <span class="infr-val">RNF-ESC-01</span></td></tr>
+                <tr><td colspan="4"><strong>Priority level:</strong> <span class="infr-val">1 (Essential)</span></td></tr>
+                <tr><td colspan="4"><strong>System (component):</strong> <span class="infr-val">Inventory and Storage Management System</span></td></tr>
+                <tr>
+                    <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
+                    <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
+                    <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
+                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
+                    <td colspan="2" class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>O Desire, user-oriented</li>
+                            <li>X Desire, technology-oriented</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>O Usability</li>
+                            <li>X Efficiency</li>
+                            <li>O Maintainability</li>
+                            <li>O Portability</li>
+                            <li>O Reliability</li>
+                            <li>O Security</li>
+                            <li>O Other: ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>O Constraint</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>O Cultural</li>
+                            <li>O Environmental</li>
+                            <li>O Implementation & design</li>
+                            <li>O Interface</li>
+                            <li>O Legal</li>
+                            <li>O Other: ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Description</strong><br>
+                        <em>The system shall ...</em><br>
+                        <span class="infr-val">have a multi-tenant architecture and be capable of scaling horizontally for seasonal harvest peaks.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Fit criteria</strong><br>
+                        <ol class="infr-val" style="margin-top: 5px; padding-left: 20px;">
+                            <li>The infrastructure must support a 500% increase in data volume and simultaneous access without performance degradation exceeding 2 seconds.</li>
+                            <li>It must ensure complete logical isolation between data of different clients (tenants).</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Validation</strong><br><em>(choose one)</em></td>
+                    <td>O Run-time online</td>
+                    <td>O Run-time offline</td>
+                    <td>O Compile-time</td>
+                </tr>
+                <tr>
+                    <td><strong>Testing</strong><br><em>(choose one)</em></td>
+                    <td>O Continuous</td>
+                    <td>X Periodical</td>
+                    <td>O Single test</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">RNF-SEG-01</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">n/a</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="infr-card">
+            <tbody>
+                <tr><td colspan="4"><strong>ID:</strong> <span class="infr-val">RNF-SEG-01</span></td></tr>
+                <tr><td colspan="4"><strong>Priority level:</strong> <span class="infr-val">1 (Essential)</span></td></tr>
+                <tr><td colspan="4"><strong>System (component):</strong> <span class="infr-val">Inventory and Storage Management System</span></td></tr>
+                <tr>
+                    <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
+                    <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
+                    <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">LGPD</span></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
+                    <td colspan="2" class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>O Desire, user-oriented</li>
+                            <li>O Desire, technology-oriented</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>O Usability</li>
+                            <li>O Efficiency</li>
+                            <li>O Maintainability</li>
+                            <li>O Portability</li>
+                            <li>O Reliability</li>
+                            <li>X Security</li>
+                            <li>O Other: ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>X Constraint</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>O Cultural</li>
+                            <li>O Environmental</li>
+                            <li>O Implementation & design</li>
+                            <li>O Interface</li>
+                            <li>O Legal</li>
+                            <li>O Other: ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Description</strong><br>
+                        <em>The system shall ...</em><br>
+                        <span class="infr-val">implement access control (RBAC), TLS encryption, and data-at-rest encryption, in compliance with LGPD.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Fit criteria</strong><br>
+                        <ol class="infr-val" style="margin-top: 5px; padding-left: 20px;">
+                            <li>100% of sensitive data must be encrypted at rest using market-standard algorithms (e.g., AES-256).</li>
+                            <li>The audit log must record any change to regulatory data (Batch and Expiration Date), identifying the user and timestamp.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Validation</strong><br><em>(choose one)</em></td>
+                    <td>X Run-time online</td>
+                    <td>O Run-time offline</td>
+                    <td>X Compile-time</td>
+                </tr>
+                <tr>
+                    <td><strong>Testing</strong><br><em>(choose one)</em></td>
+                    <td>O Continuous</td>
+                    <td>O Periodical</td>
+                    <td>O Single test</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">n/a</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">n/a</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="infr-card">
+            <tbody>
+                <tr><td colspan="4"><strong>ID:</strong> <span class="infr-val">RNF-INT-01</span></td></tr>
+                <tr><td colspan="4"><strong>Priority level:</strong> <span class="infr-val">2 (Important)</span></td></tr>
+                <tr><td colspan="4"><strong>System (component):</strong> <span class="infr-val">Inventory and Storage Management System</span></td></tr>
+                <tr>
+                    <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
+                    <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
+                    <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
+                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
+                    <td colspan="2" class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>O Desire, user-oriented</li>
+                            <li>X Desire, technology-oriented</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-bottom">
+                        <ul class="infr-options">
+                            <li>O Usability</li>
+                            <li>O Efficiency</li>
+                            <li>O Maintainability</li>
+                            <li>X Portability</li>
+                            <li>O Reliability</li>
+                            <li>O Security</li>
+                            <li>X Other: <span class="infr-val">Interoperability</span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>O Constraint</li>
+                        </ul>
+                    </td>
+                    <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                        <ul class="infr-options">
+                            <li>O Cultural</li>
+                            <li>O Environmental</li>
+                            <li>O Implementation & design</li>
+                            <li>O Interface</li>
+                            <li>O Legal</li>
+                            <li>O Other: ...</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Description</strong><br>
+                        <em>The system shall ...</em><br>
+                        <span class="infr-val">adopt an "API-first" approach with documented APIs for integration with ERP and e-commerce systems.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Fit criteria</strong><br>
+                        <ol class="infr-val" style="margin-top: 5px; padding-left: 20px;">
+                            <li>All exposed APIs must follow the RESTful standard and have complete technical documentation (Swagger/OpenAPI).</li>
+                            <li>The system must support inventory data integration with at least two market ERPs via standard connectors.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Validation</strong><br><em>(choose one)</em></td>
+                    <td>O Run-time online</td>
+                    <td>O Run-time offline</td>
+                    <td>O Compile-time</td>
+                </tr>
+                <tr>
+                    <td><strong>Testing</strong><br><em>(choose one)</em></td>
+                    <td>O Continuous</td>
+                    <td>X Periodical</td>
+                    <td>O Single test</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">n/a</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                        <span class="infr-val">n/a</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section" id="validation">
+        <h2>Validation</h2>
+        <p>The creation of a requirements catalog, no matter how detailed, requires a validation process to ensure its correctness, completeness, and relevance to the application domain. As described by Felderer and Travassos (2020), the use of a qualitative and interactive method, such as conducting Focus Group sessions with experts—ensuring the perspective of different chain <em>stakeholders</em>—acts to capture rich perceptions, verifying if the catalog's priority reflects the business reality.</p>
+        
+        <p>Therefore, we invite professionals with experience in Software Engineering, sanitary regulation experts, as well as managers in the productive and logistics sectors to critically evaluate the requirements provided here. Your evaluations regarding technical precision, completeness against standards, and operational adequacy will help continuously improve the guidelines, solidifying this artifact for reuse in industry projects.</p>
+    </div>
+
+    <div class="section" id="references">
+        <h2>References</h2>
+        
+        <p><strong>Authors:</strong> Detailed information about the authors will be available soon.</p>
+        
+        <ul>
+            <li>BALLOU, Ronald H. <em>Gerenciamento da cadeia de suprimentos/logística empresarial</em>. 5. ed. Porto Alegre: Bookman, 2006.</li>
+            <li>FELDERER, M., & TRAVASSOS, G. H.: <em>Contemporary Empirical Methods In Software Engineering</em>. Berlin/Heidelberg, Germany: Springer (2020).</li>
+            <li>GHIANI, Gianpaolo; LAPORTE, Gilbert; MUSMANNO, R. <em>Introduction to Logistics Systems Planning and Control</em>. 3. ed. Hoboken: Wiley, 2022.</li>
+            <li>ROBERTSON, Suzanne; ROBERTSON, James. <em>Mastering the Requirements Process: Getting Requirements Right</em>. 3. ed. Boston: Addison-Wesley, 2012.</li>
+            <li>WIERINGA, Roel J. <em>Design Science Methodology for Information Systems and Software Engineering</em>. Berlin: Springer, 2014.</li>
+            
+            <br>
+            <li><strong>[1]</strong> Instrução Normativa Conjunta (INC) ANVISA/MAPA Nº 02/2018.</li>
+            <li><strong>[2]</strong> ANVISA RDC Nº 18/2013.</li>
+            <li><strong>[3]</strong> ANVISA RDC Nº 216/2004.</li>
+            <li><strong>[4]</strong> Lei MAPA nº 9.973/2000.</li>
+            <li><strong>[5]</strong> ANVISA Portaria 326/97.</li>
+            <li><strong>[6]</strong> MAPA IN nº 05/2017.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
