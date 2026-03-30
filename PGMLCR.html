@@ -74,7 +74,7 @@
             border: 2px solid #000;
             margin-bottom: 30px;
             background-color: #fff;
-            font-family: 'Times New Roman', Times, serif; /* Fonte padronizada para parecer documento formal */
+            font-family: 'Times New Roman', Times, serif; 
             font-size: 14px;
         }
         .infr-card td, .infr-card th {
@@ -87,7 +87,7 @@
             font-weight: bold;
         }
         .infr-val {
-            color: #0000FF; /* Azul clássico para simular preenchimento */
+            color: #0000FF; 
         }
         .infr-no-border-bottom {
             border-bottom: none !important;
@@ -106,6 +106,11 @@
     </style>
 </head>
 <body>
+
+    <div style="text-align: right; margin-bottom: 20px;">
+        <a href="PGMLCR.html" style="text-decoration: none; padding: 5px 10px; background: #2c3e50; color: white; border-radius: 3px; font-weight: bold;">🇧🇷 PT</a>
+        <a href="PGMLCR-EN.html" style="text-decoration: none; padding: 5px 10px; background: #ccc; color: black; border-radius: 3px; font-weight: bold;">🇺🇸 EN</a>
+    </div>
 
     <h1>Catálogo de Requisitos para Sistemas de Gestão de Estoque e Armazenagem de Produtos Perecíveis</h1>
 
@@ -193,11 +198,11 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
-                    <div class="volere-content">O sistema deve permitir a configuração de algoritmos de saída de estoque, suportando mandatoriamente as políticas: PEPS (Primeiro que Entra, Primeiro que Sai); FEFO ( First Expire, First Out ), que recomenda automaticamente os lotes com validade mais próxima; e Custo Médio Ponderado para fins contábeis.</div>
+                    <div class="volere-content">O sistema deve permitir a configuração de algoritmos de saída de estoque, suportando mandatoriamente as políticas: PEPS (Primeiro que Entra, Primeiro que Sai); FEFO (First Expire, First Out), que recomenda automaticamente os lotes com validade mais próxima; e Custo Médio Ponderado para fins contábeis.</div>
                 </div>
                 <div class="volere-row">
-                    <div class="volere-label">Justificativa (Referência)</div>
-                    <div class="volere-content">Otimizar a gestão de produtos perecíveis para reduzir desperdícios e perdas financeiras por vencimento, baseando-se em princípios de eficiência logística.</div>
+                    <div class="volere-label">Justificativa (Norma)</div>
+                    <div class="volere-content">Cumprir as boas práticas de armazenagem para impedir a distribuição e o consumo de produtos vencidos, mitigando riscos à saúde, conforme exigido pela ANVISA RDC Nº 216/2004 <strong>[3]</strong> e Portaria 326/97 <strong>[5]</strong>.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Critério de Aceitação</div>
@@ -209,7 +214,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Interdependência</div>
-                    <div class="volere-content">Impacta diretamente a acuracidade dos indicadores gerenciais descritos no RF-REL-01 .</div>
+                    <div class="volere-content">Impacta diretamente a acuracidade dos indicadores gerenciais descritos no RF-REL-01.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Prioridade</div>
@@ -218,6 +223,98 @@
                 <div class="volere-row">
                     <div class="volere-label">História</div>
                     <div class="volere-content">Incluído no catálogo em 18/03/2026 para atender à gestão de operações tecnologicamente avançada.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Cartão de Especificação: RF-EST-03</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Nº Requisito</div>
+                    <div class="volere-content">RF-EST-03</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Nome</div>
+                    <div class="volere-content">Gestão de Múltiplos Armazéns</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classificação</div>
+                    <div class="volere-content">Funcional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Descrição Detalhada</div>
+                    <div class="volere-content">O sistema deve permitir a separação lógica e a gestão de múltiplas unidades físicas de armazenamento e filiais dentro do mesmo banco de dados, mantendo controles de estoque individuais para cada instalação.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justificativa (Norma)</div>
+                    <div class="volere-content">Gerenciar unidades de armazenamento separadas de forma eficaz para cumprir a certificação obrigatória de unidades armazenadoras terceirizadas exigida pela Lei MAPA nº 9.973/2000 <strong>[4]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Critério de Aceitação</div>
+                    <div class="volere-content">Usuários devem ser capazes de filtrar relatórios de estoque e logs de conformidade por local físico/armazém específico.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependências</div>
+                    <div class="volere-content">RF-ADM-01 (Certificação de Unidade Armazenadora).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependência</div>
+                    <div class="volere-content">-</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Prioridade</div>
+                    <div class="volere-content">Importante.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">História</div>
+                    <div class="volere-content">Proposto em 18/03/2026 como resposta à necessidade de monitoramento em tempo real de estoques sensíveis.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Cartão de Especificação: RF-EST-04</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Nº Requisito</div>
+                    <div class="volere-content">RF-EST-04</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Nome</div>
+                    <div class="volere-content">Gestão de Quarentena e Recall</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classificação</div>
+                    <div class="volere-content">Funcional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Descrição Detalhada</div>
+                    <div class="volere-content">O sistema deve prover um status para bloquear lotes específicos para expedição (quarentena) e rastrear rapidamente seu destino para procedimentos de recall caso seja detectada uma contaminação ou desvio de qualidade.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justificativa (Norma)</div>
+                    <div class="volere-content">Isolar produtos que não atendem aos padrões de qualidade ou segurança, impedindo seu consumo, conforme exigido pela ANVISA RDC Nº 18/2013 <strong>[2]</strong> e Portaria 326/97 <strong>[5]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Critério de Aceitação</div>
+                    <div class="volere-content">Um lote marcado como "Quarentena" deve ser imediatamente removido de todas as listas de separação (picking) e algoritmos de expedição.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependências</div>
+                    <div class="volere-content">RF-EST-01 (Controle de Lote) e RF-RAS-02 (Acompanhamento da Cadeia).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependência</div>
+                    <div class="volere-content">-</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Prioridade</div>
+                    <div class="volere-content">Essencial.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">História</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -251,7 +348,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Dependências</div>
-                    <div class="volere-content">RNF-INT (Interoperabilidade com APIs de hardware/sensores).</div>
+                    <div class="volere-content">RNF-INT-01 (Interoperabilidade com APIs de hardware/sensores).</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Interdependência</div>
@@ -297,11 +394,11 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Dependências</div>
-                    <div class="volere-content">RF-CAD-01 (Cadastro de Ativos/Equipamentos).</div>
+                    <div class="volere-content">RF-CAD-02 (Cadastro de Ativos/Equipamentos).</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Interdependência</div>
-                    <div class="volere-content">Complementa o RF-EST-05 , garantindo que os sensores que monitoram o estoque estejam devidamente calibrados.</div>
+                    <div class="volere-content">Complementa o RF-EST-05, garantindo que os sensores que monitoram o estoque estejam devidamente calibrados.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Prioridade</div>
@@ -327,7 +424,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Classificação</div>
-                    <div class="volere-content">Requisito Funcional</div>
+                    <div class="volere-content">Funcional</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
@@ -347,7 +444,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Interdependência</div>
-                    <div class="volere-content">Alimenta a base de dados necessária para a consulta pública descrita no RF-RAS-04 .</div>
+                    <div class="volere-content">Alimenta a base de dados necessária para a consulta pública descrita no RF-RAS-04.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Prioridade</div>
@@ -355,7 +452,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -369,11 +466,11 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Nome</div>
-                    <div class="volere-content">Acompanhamento da Cadeia ( End-to-End )</div>
+                    <div class="volere-content">Acompanhamento da Cadeia (End-to-End)</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Classificação</div>
-                    <div class="volere-content">Requisito Funcional</div>
+                    <div class="volere-content">Funcional</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
@@ -401,7 +498,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -419,15 +516,15 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Classificação</div>
-                    <div class="volere-content">Requisito Funcional</div>
+                    <div class="volere-content">Funcional</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
-                    <div class="volere-content">O sistema deve ser capaz de gerar e ler identificadores únicos para cada lote através de tecnologias de captura automática, especificamente Códigos de Barras , QR Codes ou etiquetas de RFID .</div>
+                    <div class="volere-content">O sistema deve ser capaz de gerar e ler identificadores únicos para cada lote através de tecnologias de captura automática, especificamente Códigos de Barras, QR Codes ou etiquetas de RFID.</div>
                 </div>
                 <div class="volere-row">
-                    <div class="volere-label">Justificativa (Referência)</div>
-                    <div class="volere-content">Automatizar a captura de dados nos pontos de controle, reduzindo erros manuais e aumentando a eficiência operacional no registro de movimentações.</div>
+                    <div class="volere-label">Justificativa (Norma)</div>
+                    <div class="volere-content">Garantir a captura precisa e padronizada de dados de rastreabilidade ao longo da cadeia de suprimentos para cumprir as obrigações de rastreabilidade, conforme exigido pela INC ANVISA/MAPA Nº 02/2018 <strong>[1]</strong>.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Critério de Aceitação</div>
@@ -439,7 +536,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Interdependência</div>
-                    <div class="volere-content">Viabiliza tecnicamente o requisito de consulta do consumidor ( RF-RAS-04 ).</div>
+                    <div class="volere-content">Viabiliza tecnicamente o requisito de consulta do consumidor (RF-RAS-04).</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Prioridade</div>
@@ -447,7 +544,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -465,15 +562,15 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Classificação</div>
-                    <div class="volere-content">Requisito Funcional</div>
+                    <div class="volere-content">Funcional</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
                     <div class="volere-content">O sistema deve oferecer uma interface voltada ao consumidor final (ex: portal web acessível via QR Code na embalagem) que apresente o histórico resumido de rastreabilidade do lote.</div>
                 </div>
                 <div class="volere-row">
-                    <div class="volere-label">Justificativa (Referência)</div>
-                    <div class="volere-content">Garantir a transparência da cadeia da sociobiodiversidade e a segurança do consumidor, permitindo a verificação da origem do produto.</div>
+                    <div class="volere-label">Justificativa (Norma)</div>
+                    <div class="volere-content">Garantir a transparência e o acesso do consumidor às informações de origem e segurança do produto, em conformidade direta com os objetivos da INC ANVISA/MAPA Nº 02/2018 <strong>[1]</strong>.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Critério de Aceitação</div>
@@ -485,7 +582,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Interdependência</div>
-                    <div class="volere-content">Depende da integridade dos dados registrados no módulo RF-RAS-02 .</div>
+                    <div class="volere-content">Depende da integridade dos dados registrados no módulo RF-RAS-02.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Prioridade</div>
@@ -493,7 +590,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -531,7 +628,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Interdependência</div>
-                    <div class="volere-content">Este requisito é a base mandatória para o registro de origem geolocalizada no RF-RAS-01 .</div>
+                    <div class="volere-content">Este requisito é a base mandatória para o registro de origem geolocalizada no RF-RAS-01.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Prioridade</div>
@@ -539,7 +636,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -577,7 +674,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Interdependência</div>
-                    <div class="volere-content">Fornece as evidências necessárias para os Relatórios de Conformidade e Auditoria descritos no RF-REL-02 .</div>
+                    <div class="volere-content">Fornece as evidências necessárias para os Relatórios de Conformidade e Auditoria descritos no RF-REL-02.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Prioridade</div>
@@ -585,7 +682,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -603,7 +700,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Classificação</div>
-                    <div class="volere-content">Requisito Funcional</div>
+                    <div class="volere-content">Funcional</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
@@ -611,7 +708,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Justificativa (Norma)</div>
-                    <div class="volere-content">A digitalização dos processos de armazenagem é um fator-chave para reduzir desperdícios e melhorar o nível de serviço em cadeias de perecíveis. A eficiência logística depende diretamente da capacidade de controlar fluxos de materiais de forma sustentável.</div>
+                    <div class="volere-content">A digitalização dos processos de armazenagem é um fator-chave para reduzir desperdícios e melhorar o nível de serviço em cadeias de perecíveis. A eficiência logística depende diretamente da capacidade de controlar fluxos de materiais de forma sustentável. Além disso, o monitoramento estrito desses dados garante a conformidade com as regulações de controle e prestação de informações de armazenagem agrícola exigidas pela Lei MAPA nº 9.973/2000 <strong>[4]</strong>.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Critério de Aceitação</div>
@@ -627,7 +724,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -645,7 +742,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Classificação</div>
-                    <div class="volere-content">Requisito Funcional</div>
+                    <div class="volere-content">Funcional</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
@@ -653,7 +750,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Justificativa (Norma)</div>
-                    <div class="volere-content">O sistema deve apoiar a conformidade normativa, automatizando controles para prevenir falhas que comprometam a qualidade e segurança. Atende às obrigatoriedades de registro de limpeza e manutenção previstas nas normas ANVISA RDC 216/04 <strong>[3]</strong> e Portaria 326/97 <strong>[5]</strong>.</div>
+                    <div class="volere-content">O sistema deve apoiar a conformidade normativa, automatizando controles para prevenir falhas que comprometam a qualidade e a segurança. Atende às obrigatoriedades de registro de limpeza e manutenção previstas nas normas ANVISA RDC 216/04 <strong>[3]</strong> e Portaria 326/97 <strong>[5]</strong>.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Critério de Aceitação</div>
@@ -669,7 +766,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -687,7 +784,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Classificação</div>
-                    <div class="volere-content">Requisito Funcional</div>
+                    <div class="volere-content">Funcional</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
@@ -715,7 +812,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -733,7 +830,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Classificação</div>
-                    <div class="volere-content">Requisito Funcional</div>
+                    <div class="volere-content">Funcional</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
@@ -753,7 +850,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Interdependência</div>
-                    <div class="volere-content">Mandatório para o funcionamento do RL-002 (Registro de Manutenção) e para a integração IoT do RF-EST-05 .</div>
+                    <div class="volere-content">Mandatório para o funcionamento do RL-002 (Registro de Manutenção) e para a integração IoT do RF-EST-05.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Prioridade</div>
@@ -761,7 +858,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -779,7 +876,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Classificação</div>
-                    <div class="volere-content">Requisito Funcional</div>
+                    <div class="volere-content">Funcional</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Descrição Detalhada</div>
@@ -807,7 +904,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -853,7 +950,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -899,7 +996,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -945,7 +1042,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -991,7 +1088,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">História</div>
-                    <div class="volere-content">2026-03-19</div>
+                    <div class="volere-content">18/03/2026</div>
                 </div>
             </div>
         </div>
@@ -1010,7 +1107,7 @@
                     <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
                     <td width="26%">X Stakeholder:<br><span class="infr-val">Extrativistas e Analistas</span></td>
                     <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
-                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">ANVISA RDC Nº 216/2004</span></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
@@ -1035,7 +1132,7 @@
                 <tr>
                     <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
                         <ul class="infr-options">
-                            <li>O Constraint</li>
+                            <li>X Constraint</li>
                         </ul>
                     </td>
                     <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
@@ -1044,7 +1141,7 @@
                             <li>O Environmental</li>
                             <li>O Implementation & design</li>
                             <li>O Interface</li>
-                            <li>O Legal</li>
+                            <li>X Legal</li>
                             <li>O Other: ...</li>
                         </ul>
                     </td>
@@ -1053,7 +1150,7 @@
                     <td colspan="4">
                         <strong>Description</strong><br>
                         <em>The system shall ...</em><br>
-                        <span class="infr-val">possuir uma interface intuitiva e acessível para diferentes níveis de letramento digital e ser responsiva para dispositivos móveis.</span>
+                        <span class="infr-val">possuir uma interface intuitiva e acessível para diferentes níveis de letramento digital, ser responsiva para dispositivos móveis e facilitar a conformidade com os padrões de higiene da ANVISA RDC Nº 216/2004.</span>
                     </td>
                 </tr>
                 <tr>
@@ -1101,7 +1198,7 @@
                     <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
                     <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
                     <td width="26%">X Own organization:<br><span class="infr-val">Stakeholders em áreas rurais</span></td>
-                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">INC ANVISA/MAPA Nº 02/2018</span></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
@@ -1126,7 +1223,7 @@
                 <tr>
                     <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
                         <ul class="infr-options">
-                            <li>O Constraint</li>
+                            <li>X Constraint</li>
                         </ul>
                     </td>
                     <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
@@ -1135,7 +1232,7 @@
                             <li>O Environmental</li>
                             <li>O Implementation & design</li>
                             <li>O Interface</li>
-                            <li>O Legal</li>
+                            <li>X Legal</li>
                             <li>O Other: ...</li>
                         </ul>
                     </td>
@@ -1144,7 +1241,7 @@
                     <td colspan="4">
                         <strong>Description</strong><br>
                         <em>The system shall ...</em><br>
-                        <span class="infr-val">garantir alta disponibilidade e incluir um modo de operação offline para áreas rurais com sincronização automática.</span>
+                        <span class="infr-val">garantir alta disponibilidade e incluir um modo de operação offline para áreas rurais com sincronização automática, cumprindo as regulações de rastreabilidade.</span>
                     </td>
                 </tr>
                 <tr>
@@ -1191,8 +1288,8 @@
                 <tr>
                     <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
                     <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
-                    <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
-                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                    <td width="26%">X Own organization:<br><span class="infr-val">Equipe de Arquitetura de TI</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">Lei MAPA nº 9.973/2000</span></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
@@ -1217,16 +1314,16 @@
                 <tr>
                     <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
                         <ul class="infr-options">
-                            <li>O Constraint</li>
+                            <li>X Constraint</li>
                         </ul>
                     </td>
                     <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
                         <ul class="infr-options">
                             <li>O Cultural</li>
                             <li>O Environmental</li>
-                            <li>O Implementation & design</li>
+                            <li>X Implementation & design</li>
                             <li>O Interface</li>
-                            <li>O Legal</li>
+                            <li>X Legal</li>
                             <li>O Other: ...</li>
                         </ul>
                     </td>
@@ -1235,7 +1332,7 @@
                     <td colspan="4">
                         <strong>Description</strong><br>
                         <em>The system shall ...</em><br>
-                        <span class="infr-val">possuir arquitetura multi-tenant e ser capaz de escalar horizontalmente para picos sazonais de colheita.</span>
+                        <span class="infr-val">possuir arquitetura multi-tenant e ser capaz de escalar horizontalmente para picos sazonais de colheita, garantindo isolamento rigoroso de dados para cumprir com a regulação de armazenagem agrícola (Lei MAPA nº 9.973/2000).</span>
                     </td>
                 </tr>
                 <tr>
@@ -1251,7 +1348,7 @@
                     <td><strong>Validation</strong><br><em>(choose one)</em></td>
                     <td>O Run-time online</td>
                     <td>O Run-time offline</td>
-                    <td>O Compile-time</td>
+                    <td>X Compile-time</td>
                 </tr>
                 <tr>
                     <td><strong>Testing</strong><br><em>(choose one)</em></td>
@@ -1268,7 +1365,7 @@
                 <tr>
                     <td colspan="4">
                         <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">Todos os módulos sensíveis a tenant (ex: Acesso de Estoque, Relatórios)</span>
                     </td>
                 </tr>
             </tbody>
@@ -1283,14 +1380,14 @@
                     <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
                     <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
                     <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
-                    <td width="28%">X Legal entity:<br><span class="infr-val">LGPD</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">LGPD (Lei n° 13.709/2018); Instrução Normativa Conjunta Nº 02/2018</span></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
                     <td colspan="2" class="infr-no-border-bottom">
                         <ul class="infr-options">
                             <li>O Desire, user-oriented</li>
-                            <li>O Desire, technology-oriented</li>
+                            <li>X Desire, technology-oriented</li>
                         </ul>
                     </td>
                     <td class="infr-no-border-bottom">
@@ -1317,7 +1414,7 @@
                             <li>O Environmental</li>
                             <li>O Implementation & design</li>
                             <li>O Interface</li>
-                            <li>O Legal</li>
+                            <li>X Legal</li>
                             <li>O Other: ...</li>
                         </ul>
                     </td>
@@ -1326,7 +1423,7 @@
                     <td colspan="4">
                         <strong>Description</strong><br>
                         <em>The system shall ...</em><br>
-                        <span class="infr-val">implementar controle de acesso (RBAC), criptografia TLS e em repouso, em conformidade com a LGPD.</span>
+                        <span class="infr-val">implementar controle de acesso (RBAC), criptografia TLS e em repouso, em conformidade com a LGPD e a Instrução Normativa Conjunta Nº 02/2018 (auditoria de rastreabilidade).</span>
                     </td>
                 </tr>
                 <tr>
@@ -1342,24 +1439,24 @@
                     <td><strong>Validation</strong><br><em>(choose one)</em></td>
                     <td>X Run-time online</td>
                     <td>O Run-time offline</td>
-                    <td>X Compile-time</td>
+                    <td>O Compile-time</td>
                 </tr>
                 <tr>
                     <td><strong>Testing</strong><br><em>(choose one)</em></td>
-                    <td>O Continuous</td>
+                    <td>X Continuous</td>
                     <td>O Periodical</td>
                     <td>O Single test</td>
                 </tr>
                 <tr>
                     <td colspan="4">
                         <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">RNF-ESC-01 (Sobrecarga de performance)</span>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
                         <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">Todos os módulos de acesso e registro (ex: Login, RF-EST, RF-RAS)</span>
                     </td>
                 </tr>
             </tbody>
@@ -1373,8 +1470,8 @@
                 <tr>
                     <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
                     <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
-                    <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
-                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                    <td width="26%">X Own organization:<br><span class="infr-val">Equipe de Arquitetura</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">Instrução Normativa Conjunta Nº 02/2018</span></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
@@ -1399,7 +1496,7 @@
                 <tr>
                     <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
                         <ul class="infr-options">
-                            <li>O Constraint</li>
+                            <li>X Constraint</li>
                         </ul>
                     </td>
                     <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
@@ -1407,8 +1504,8 @@
                             <li>O Cultural</li>
                             <li>O Environmental</li>
                             <li>O Implementation & design</li>
-                            <li>O Interface</li>
-                            <li>O Legal</li>
+                            <li>X Interface</li>
+                            <li>X Legal</li>
                             <li>O Other: ...</li>
                         </ul>
                     </td>
@@ -1417,7 +1514,7 @@
                     <td colspan="4">
                         <strong>Description</strong><br>
                         <em>The system shall ...</em><br>
-                        <span class="infr-val">adotar abordagem "API-first" com APIs documentadas para integração com sistemas ERP e e-commerce.</span>
+                        <span class="infr-val">adotar abordagem "API-first" com APIs documentadas para integração com sistemas ERP e e-commerce, facilitando a troca de dados de rastreabilidade conforme exigido pela Instrução Normativa Conjunta Nº 02/2018.</span>
                     </td>
                 </tr>
                 <tr>
@@ -1433,7 +1530,7 @@
                     <td><strong>Validation</strong><br><em>(choose one)</em></td>
                     <td>O Run-time online</td>
                     <td>O Run-time offline</td>
-                    <td>O Compile-time</td>
+                    <td>X Compile-time</td>
                 </tr>
                 <tr>
                     <td><strong>Testing</strong><br><em>(choose one)</em></td>
@@ -1444,13 +1541,13 @@
                 <tr>
                     <td colspan="4">
                         <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">RNF-SEG-01 (Expor APIs aumenta a superfície de ataque de segurança)</span>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
                         <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">Módulos de exportação de dados e sincronização externa</span>
                     </td>
                 </tr>
             </tbody>
@@ -1461,7 +1558,7 @@
         <h2>Validação</h2>
         <p>A criação de um catálogo de requisitos, por mais detalhada que seja, requer um processo de validação para assegurar sua correção, completude e relevância para o domínio da aplicação. Conforme descrito por Felderer e Travassos (2020), a utilização de um método qualitativo e interativo como a condução de sessões de Grupo Focal com especialistas — garantindo a visão de diferentes <em>stakeholders</em> da cadeia — atua na captação rica de percepções, verificando se a prioridade do catálogo reflete a realidade do negócio.</p>
         
-        <p>Diante disso, convidamos profissionais com experiência na Engenharia de Software, especialistas em regulação sanitária, além de gestores do setor produtivo e logístico a avaliarem criticamente os requisitos aqui disponibilizados. As suas avaliações sobre a precisão técnica, completude frente às normas e adequação operacional ajudarão a aperfeiçoar continuamente as diretrizes, solidificando o presente artefato para reuso em projetos na indústria.</p>
+        <p>Diante disso, convidamos profissionais com experiência na Engenharia de Software, especialistas em regulação sanitária, além de gestores do setor produtivo e logístico a avaliarem criticamente os requisitos aqui disponibilizados. As suas avaliações sobre a precisão técnica, completude frente às normas e adequação operacional ajudarão a aperfeiçoar continuamente as diretrizes, solidificando o presente artefato para reuso em projetos na indústria. <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSecFyUjhazgVrwEQbWmMmcA-ZBac8hc064UrMIRClfOHW-2kQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Por favor, clique aqui para acessar o formulário de validação e contribuir com nosso estudo.</a></strong></p>
     </div>
 
     <div class="section" id="referencias">
