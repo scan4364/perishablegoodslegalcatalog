@@ -108,8 +108,8 @@
 <body>
 
     <div style="text-align: right; margin-bottom: 20px;">
-        <a href="index.html" style="text-decoration: none; padding: 5px 10px; background: #ccc; color: black; border-radius: 3px; font-weight: bold;">🇧🇷 PT</a>
-        <a href="index-en.html" style="text-decoration: none; padding: 5px 10px; background: #2c3e50; color: white; border-radius: 3px; font-weight: bold;">🇺🇸 EN</a>
+        <a href="PGMLCR.html" style="text-decoration: none; padding: 5px 10px; background: #ccc; color: black; border-radius: 3px; font-weight: bold;">🇧🇷 PT</a>
+        <a href="PGMLCR-EN.html" style="text-decoration: none; padding: 5px 10px; background: #2c3e50; color: white; border-radius: 3px; font-weight: bold;">🇺🇸 EN</a>
     </div>
 
     <h1>Requirements Catalog for Perishable Goods Inventory and Storage Management Systems</h1>
@@ -201,8 +201,8 @@
                     <div class="volere-content">The system must allow the configuration of inventory output algorithms, mandatorily supporting the following policies: FIFO (First In, First Out); FEFO (First Expire, First Out), which automatically recommends batches with the closest expiration date; and Weighted Average Cost for accounting purposes.</div>
                 </div>
                 <div class="volere-row">
-                    <div class="volere-label">Justification (Reference)</div>
-                    <div class="volere-content">Optimize the management of perishable products to reduce waste and financial losses due to expiration, based on principles of logistics efficiency.</div>
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Comply with good storage practices to prevent the distribution and consumption of expired products, mitigating health risks as mandated by ANVISA RDC No. 216/2004 <strong>[3]</strong> and Portaria 326/97 <strong>[5]</strong>.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Fit Criterion</div>
@@ -223,6 +223,98 @@
                 <div class="volere-row">
                     <div class="volere-label">History</div>
                     <div class="volere-content">Included in the catalog on 2026-03-18 to support technologically advanced operations management.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-EST-03</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-EST-03</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Multiple Warehouse Management</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must allow the logical separation and management of multiple physical storage units and branches within the same database, maintaining individual inventory controls for each facility.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Manage separate storage units effectively to comply with the mandatory certification of outsourced storage units as required by MAPA Law No. 9.973/2000 <strong>[4]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">Users must be able to filter inventory reports and compliance logs by specific physical location/warehouse.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-ADM-01 (Storage Unit Certification).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">-</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Important.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">Proposed on 2026-03-18 in response to the need for real-time monitoring of sensitive inventories.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-EST-04</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-EST-04</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Quarantine and Recall Management</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must provide a status to block specific batches from dispatch (quarantine) and rapidly trace their destination for recall procedures if a contamination or quality deviation is detected.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Isolate products that fail quality or safety standards, preventing their consumption as mandated by ANVISA RDC No. 18/2013 <strong>[2]</strong> and Portaria 326/97 <strong>[5]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">A batch marked as "Quarantine" must be immediately removed from all available picking lists and dispatch algorithms.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">RF-EST-01 (Batch Control) and RF-RAS-02 (Tracking).</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">-</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-18</div>
                 </div>
             </div>
         </div>
@@ -269,6 +361,52 @@
                 <div class="volere-row">
                     <div class="volere-label">History</div>
                     <div class="volere-content">Proposed on 2026-03-18 in response to the need for real-time monitoring of sensitive inventories.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="volere-card">
+            <div class="volere-header">Specification Card: RF-RAS-01</div>
+            <div class="volere-body">
+                <div class="volere-row">
+                    <div class="volere-label">Requirement No.</div>
+                    <div class="volere-content">RF-RAS-01</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Name</div>
+                    <div class="volere-content">Origin Registration with Geolocation</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Classification</div>
+                    <div class="volere-content">Functional</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Detailed Description</div>
+                    <div class="volere-content">The system must allow detailed registration of the origin of each raw material batch. This includes the identification of the producer or extractivist and the mandatory capture of geographic coordinates (latitude and longitude) of the collection point.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Meet the mandatory requirement to identify the origin and producers in the supply chain, as established by Joint Normative Instruction (INC) ANVISA/MAPA No. 02/2018 <strong>[1]</strong>.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Fit Criterion</div>
+                    <div class="volere-content">-</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Dependencies</div>
+                    <div class="volere-content">-</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Interdependencies</div>
+                    <div class="volere-content">-</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">Priority</div>
+                    <div class="volere-content">Essential.</div>
+                </div>
+                <div class="volere-row">
+                    <div class="volere-label">History</div>
+                    <div class="volere-content">2026-03-18 </div>
                 </div>
             </div>
         </div>
@@ -431,8 +569,8 @@
                     <div class="volere-content">The system must be capable of generating and reading unique identifiers for each batch through automatic capture technologies, specifically Barcodes, QR Codes, or RFID tags.</div>
                 </div>
                 <div class="volere-row">
-                    <div class="volere-label">Justification (Reference)</div>
-                    <div class="volere-content">Automate data capture at control points, reducing manual errors and increasing operational efficiency in movement recording.</div>
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Ensure accurate and standardized capture of traceability data along the supply chain to comply with traceability obligations, as required by INC ANVISA/MAPA No. 02/2018 <strong>[1]</strong>.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Fit Criterion</div>
@@ -477,8 +615,8 @@
                     <div class="volere-content">The system must provide an interface aimed at the final consumer (e.g., a web portal accessible via QR Code on the packaging) presenting a summarized traceability history of the batch.</div>
                 </div>
                 <div class="volere-row">
-                    <div class="volere-label">Justification (Reference)</div>
-                    <div class="volere-content">Ensure transparency in the socio-biodiversity chain and consumer safety by allowing verification of product origin.</div>
+                    <div class="volere-label">Justification (Standard)</div>
+                    <div class="volere-content">Guarantee transparency and consumer access to product origin and safety information, in direct compliance with the objectives of INC ANVISA/MAPA No. 02/2018 <strong>[1]</strong>.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Fit Criterion</div>
@@ -616,7 +754,7 @@
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Justification (Standard)</div>
-                    <div class="volere-content">The digitalization of storage processes is a key factor to reduce waste and improve service levels in perishable supply chains. Logistics efficiency directly depends on the ability to control material flows sustainably.</div>
+                    <div class="volere-content">The digitalization of storage processes is a key factor to reduce waste and improve service levels in perishable supply chains. Logistics efficiency directly depends on the ability to control material flows sustainably. Furthermore, strict monitoring of this data ensures compliance with the agricultural storage control and reporting regulations mandated by Law No. 9.973/2000.</div>
                 </div>
                 <div class="volere-row">
                     <div class="volere-label">Fit Criterion</div>
@@ -1015,7 +1153,7 @@
                     <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
                     <td width="26%">X Stakeholder:<br><span class="infr-val">Extractivists and Analysts</span></td>
                     <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
-                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">ANVISA RDC Nº 216/2004</span></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
@@ -1040,7 +1178,7 @@
                 <tr>
                     <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
                         <ul class="infr-options">
-                            <li>O Constraint</li>
+                            <li>X Constraint</li>
                         </ul>
                     </td>
                     <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
@@ -1049,7 +1187,7 @@
                             <li>O Environmental</li>
                             <li>O Implementation & design</li>
                             <li>O Interface</li>
-                            <li>O Legal</li>
+                            <li>X Legal</li>
                             <li>O Other: ...</li>
                         </ul>
                     </td>
@@ -1058,7 +1196,7 @@
                     <td colspan="4">
                         <strong>Description</strong><br>
                         <em>The system shall ...</em><br>
-                        <span class="infr-val">have an intuitive and accessible interface for different levels of digital literacy and be responsive for mobile devices.</span>
+                        <span class="infr-val">have an intuitive and accessible interface for different levels of digital literacy, be responsive for mobile devices, and facilitate compliance with ANVISA RDC Nº 216/2004 hygiene standards.</span>
                     </td>
                 </tr>
                 <tr>
@@ -1098,94 +1236,94 @@
         </table>
 
         <table class="infr-card">
-            <tbody>
-                <tr><td colspan="4"><strong>ID:</strong> <span class="infr-val">RNF-DIS-01</span></td></tr>
-                <tr><td colspan="4"><strong>Priority level:</strong> <span class="infr-val">1 (Essential)</span></td></tr>
-                <tr><td colspan="4"><strong>System (component):</strong> <span class="infr-val">Inventory and Storage Management System</span></td></tr>
-                <tr>
-                    <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
-                    <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
-                    <td width="26%">X Own organization:<br><span class="infr-val">Rural area stakeholders</span></td>
-                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
-                </tr>
-                <tr>
-                    <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
-                    <td colspan="2" class="infr-no-border-bottom">
-                        <ul class="infr-options">
-                            <li>O Desire, user-oriented</li>
-                            <li>X Desire, technology-oriented</li>
-                        </ul>
-                    </td>
-                    <td class="infr-no-border-bottom">
-                        <ul class="infr-options">
-                            <li>O Usability</li>
-                            <li>O Efficiency</li>
-                            <li>O Maintainability</li>
-                            <li>O Portability</li>
-                            <li>X Reliability</li>
-                            <li>O Security</li>
-                            <li>O Other: ...</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
-                        <ul class="infr-options">
-                            <li>O Constraint</li>
-                        </ul>
-                    </td>
-                    <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
-                        <ul class="infr-options">
-                            <li>O Cultural</li>
-                            <li>O Environmental</li>
-                            <li>O Implementation & design</li>
-                            <li>O Interface</li>
-                            <li>O Legal</li>
-                            <li>O Other: ...</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <strong>Description</strong><br>
-                        <em>The system shall ...</em><br>
-                        <span class="infr-val">ensure high availability and include an offline operation mode for rural areas with automatic synchronization.</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <strong>Fit criteria</strong><br>
-                        <ol class="infr-val" style="margin-top: 5px; padding-left: 20px;">
-                            <li>Uptime must be at least 99.9%.</li>
-                            <li>Automatic synchronization must start within 10 seconds after connectivity is restored.</li>
-                        </ol>
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Validation</strong><br><em>(choose one)</em></td>
-                    <td>X Run-time online</td>
-                    <td>O Run-time offline</td>
-                    <td>O Compile-time</td>
-                </tr>
-                <tr>
-                    <td><strong>Testing</strong><br><em>(choose one)</em></td>
-                    <td>X Continuous</td>
-                    <td>O Periodical</td>
-                    <td>O Single test</td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">All field registration modules (RF-EST, RF-RAS)</span>
-                    </td>
-                </tr>
-            </tbody>
+    <tbody>
+        <tr><td colspan="4"><strong>ID:</strong> <span class="infr-val">RNF-DIS-01</span></td></tr>
+        <tr><td colspan="4"><strong>Priority level:</strong> <span class="infr-val">1 (Essential)</span></td></tr>
+        <tr><td colspan="4"><strong>System (component):</strong> <span class="infr-val">Inventory and Storage Management System</span></td></tr>
+        <tr>
+            <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
+            <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
+            <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
+            <td width="28%">X Legal entity:<br><span class="infr-val">INC ANVISA/MAPA Nº 02/2018</span></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
+            <td colspan="2" class="infr-no-border-bottom">
+                <ul class="infr-options">
+                    <li>O Desire, user-oriented</li>
+                    <li>X Desire, technology-oriented</li>
+                </ul>
+            </td>
+            <td class="infr-no-border-bottom">
+                <ul class="infr-options">
+                    <li>O Usability</li>
+                    <li>O Efficiency</li>
+                    <li>O Maintainability</li>
+                    <li>O Portability</li>
+                    <li>X Reliability</li>
+                    <li>O Security</li>
+                    <li>O Other: ...</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                <ul class="infr-options">
+                    <li>X Constraint</li>
+                </ul>
+            </td>
+            <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
+                <ul class="infr-options">
+                    <li>O Cultural</li>
+                    <li>O Environmental</li>
+                    <li>O Implementation & design</li>
+                    <li>O Interface</li>
+                    <li>X Legal</li>
+                    <li>O Other: ...</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <strong>Description</strong><br>
+                <em>The system shall ...</em><br>
+                <span class="infr-val">ensure high availability and include an offline operation mode for rural areas with automatic synchronization, complying with traceability regulations.</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <strong>Fit criteria</strong><br>
+                <ol class="infr-val" style="margin-top: 5px; padding-left: 20px;">
+                    <li>Uptime must be at least 99.9%.</li>
+                    <li>Automatic synchronization must start within 10 seconds after connectivity is restored.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Validation</strong><br><em>(choose one)</em></td>
+            <td>X Run-time online</td>
+            <td>O Run-time offline</td>
+            <td>O Compile-time</td>
+        </tr>
+        <tr>
+            <td><strong>Testing</strong><br><em>(choose one)</em></td>
+            <td>X Continuous</td>
+            <td>O Periodical</td>
+            <td>O Single test</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                <span class="infr-val">n/a</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
+                <span class="infr-val">All field registration modules (RF-EST, RF-RAS)</span>
+            </td>
+        </tr>
+    </tbody>
         </table>
 
         <table class="infr-card">
@@ -1196,8 +1334,8 @@
                 <tr>
                     <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
                     <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
-                    <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
-                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                    <td width="26%">X Own organization:<br><span class="infr-val">IT Architecture Team</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">Lei MAPA nº 9.973/2000</span></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
@@ -1222,16 +1360,16 @@
                 <tr>
                     <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
                         <ul class="infr-options">
-                            <li>O Constraint</li>
+                            <li>X Constraint</li>
                         </ul>
                     </td>
                     <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
                         <ul class="infr-options">
                             <li>O Cultural</li>
                             <li>O Environmental</li>
-                            <li>O Implementation & design</li>
+                            <li>X Implementation & design</li>
                             <li>O Interface</li>
-                            <li>O Legal</li>
+                            <li>X Legal</li>
                             <li>O Other: ...</li>
                         </ul>
                     </td>
@@ -1240,7 +1378,7 @@
                     <td colspan="4">
                         <strong>Description</strong><br>
                         <em>The system shall ...</em><br>
-                        <span class="infr-val">have a multi-tenant architecture and be capable of scaling horizontally for seasonal harvest peaks.</span>
+                        <span class="infr-val">have a multi-tenant architecture and be capable of scaling horizontally for seasonal harvest peaks, ensuring strict data isolation to comply with agricultural storage regulations (Lei MAPA nº 9.973/2000).</span>
                     </td>
                 </tr>
                 <tr>
@@ -1256,7 +1394,7 @@
                     <td><strong>Validation</strong><br><em>(choose one)</em></td>
                     <td>O Run-time online</td>
                     <td>O Run-time offline</td>
-                    <td>O Compile-time</td>
+                    <td>X Compile-time</td>
                 </tr>
                 <tr>
                     <td><strong>Testing</strong><br><em>(choose one)</em></td>
@@ -1273,7 +1411,7 @@
                 <tr>
                     <td colspan="4">
                         <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">All tenant-aware modules (e.g., Inventory Access, Reporting)</span>
                     </td>
                 </tr>
             </tbody>
@@ -1288,14 +1426,14 @@
                     <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
                     <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
                     <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
-                    <td width="28%">X Legal entity:<br><span class="infr-val">LGPD</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">LGPD (Law n° 13.709/2018); Joint Normative Instruction No. 2/2018</span></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
                     <td colspan="2" class="infr-no-border-bottom">
                         <ul class="infr-options">
                             <li>O Desire, user-oriented</li>
-                            <li>O Desire, technology-oriented</li>
+                            <li>X Desire, technology-oriented</li>
                         </ul>
                     </td>
                     <td class="infr-no-border-bottom">
@@ -1322,7 +1460,7 @@
                             <li>O Environmental</li>
                             <li>O Implementation & design</li>
                             <li>O Interface</li>
-                            <li>O Legal</li>
+                            <li>X Legal</li>
                             <li>O Other: ...</li>
                         </ul>
                     </td>
@@ -1331,7 +1469,7 @@
                     <td colspan="4">
                         <strong>Description</strong><br>
                         <em>The system shall ...</em><br>
-                        <span class="infr-val">implement access control (RBAC), TLS encryption, and data-at-rest encryption, in compliance with LGPD.</span>
+                        <span class="infr-val">implement access control (RBAC), TLS encryption, and data-at-rest encryption, in compliance with LGPD and Joint Normative Instruction No. 2/2018 (traceability auditing).</span>
                     </td>
                 </tr>
                 <tr>
@@ -1347,24 +1485,24 @@
                     <td><strong>Validation</strong><br><em>(choose one)</em></td>
                     <td>X Run-time online</td>
                     <td>O Run-time offline</td>
-                    <td>X Compile-time</td>
+                    <td>O Compile-time</td>
                 </tr>
                 <tr>
                     <td><strong>Testing</strong><br><em>(choose one)</em></td>
-                    <td>O Continuous</td>
+                    <td>X Continuous</td>
                     <td>O Periodical</td>
                     <td>O Single test</td>
                 </tr>
                 <tr>
                     <td colspan="4">
                         <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">RNF-ESC-01 (Performance overhead)</span>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
                         <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">All access and registration modules (e.g., Login, RF-EST, RF-RAS)</span>
                     </td>
                 </tr>
             </tbody>
@@ -1378,8 +1516,8 @@
                 <tr>
                     <td width="20%"><strong>Source</strong><br><em>(choose one)</em></td>
                     <td width="26%">O Stakeholder:<br><span class="infr-val">...</span></td>
-                    <td width="26%">O Own organization:<br><span class="infr-val">...</span></td>
-                    <td width="28%">O Legal entity:<br><span class="infr-val">...</span></td>
+                    <td width="26%">X Own organization:<br><span class="infr-val">Architecture Team</span></td>
+                    <td width="28%">X Legal entity:<br><span class="infr-val">Joint Normative Instruction No. 2/2018</span></td>
                 </tr>
                 <tr>
                     <td rowspan="2"><strong>Type</strong><br><em>(choose one per column)</em></td>
@@ -1404,7 +1542,7 @@
                 <tr>
                     <td colspan="2" class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
                         <ul class="infr-options">
-                            <li>O Constraint</li>
+                            <li>X Constraint</li>
                         </ul>
                     </td>
                     <td class="infr-no-border-top" style="border-top: 1px solid #000 !important;">
@@ -1412,8 +1550,8 @@
                             <li>O Cultural</li>
                             <li>O Environmental</li>
                             <li>O Implementation & design</li>
-                            <li>O Interface</li>
-                            <li>O Legal</li>
+                            <li>X Interface</li>
+                            <li>X Legal</li>
                             <li>O Other: ...</li>
                         </ul>
                     </td>
@@ -1422,7 +1560,7 @@
                     <td colspan="4">
                         <strong>Description</strong><br>
                         <em>The system shall ...</em><br>
-                        <span class="infr-val">adopt an "API-first" approach with documented APIs for integration with ERP and e-commerce systems.</span>
+                        <span class="infr-val">adopt an "API-first" approach with documented APIs for integration with ERP and e-commerce systems, facilitating traceability data exchange as required by Joint Normative Instruction No. 2/2018.</span>
                     </td>
                 </tr>
                 <tr>
@@ -1438,7 +1576,7 @@
                     <td><strong>Validation</strong><br><em>(choose one)</em></td>
                     <td>O Run-time online</td>
                     <td>O Run-time offline</td>
-                    <td>O Compile-time</td>
+                    <td>X Compile-time</td>
                 </tr>
                 <tr>
                     <td><strong>Testing</strong><br><em>(choose one)</em></td>
@@ -1449,13 +1587,13 @@
                 <tr>
                     <td colspan="4">
                         <strong>Conflicting NFR(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">RNF-SEG-01 (Exposing APIs increases the security attack surface)</span>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
                         <strong>Impacted functional requirement(s)</strong> <em>(mandatory in case of constraint)</em><br>
-                        <span class="infr-val">n/a</span>
+                        <span class="infr-val">Data export and external synchronization modules</span>
                     </td>
                 </tr>
             </tbody>
@@ -1466,7 +1604,7 @@
         <h2>Validation</h2>
         <p>The creation of a requirements catalog, no matter how detailed, requires a validation process to ensure its correctness, completeness, and relevance to the application domain. As described by Felderer and Travassos (2020), the use of a qualitative and interactive method, such as conducting Focus Group sessions with experts—ensuring the perspective of different chain <em>stakeholders</em>—acts to capture rich perceptions, verifying if the catalog's priority reflects the business reality.</p>
         
-        <p>Therefore, we invite professionals with experience in Software Engineering, sanitary regulation experts, as well as managers in the productive and logistics sectors to critically evaluate the requirements provided here. Your evaluations regarding technical precision, completeness against standards, and operational adequacy will help continuously improve the guidelines, solidifying this artifact for reuse in industry projects.</p>
+        <p>Therefore, we invite professionals with experience in Software Engineering, sanitary regulation experts, as well as managers in the productive and logistics sectors to critically evaluate the requirements provided here. Your evaluations regarding technical precision, completeness against standards, and operational adequacy will help continuously improve the guidelines, solidifying this artifact for reuse in industry projects. <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSecFyUjhazgVrwEQbWmMmcA-ZBac8hc064UrMIRClfOHW-2kQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Please click here to access the validation form and contribute to our study.</a></strong></p>
     </div>
 
     <div class="section" id="references">
